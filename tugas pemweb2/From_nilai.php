@@ -32,13 +32,13 @@
             <div class="form-group row">
                 <label for="nama" class="col-5 col-form-label font-weight-bold text-right">Nama Lengkap</label>
                 <div class="col-7">
-                    <input id="nama" placeholder="Nama Lengkap" type="text" required="required" class="form-control">
+                    <input name="nama" placeholder="Nama Lengkap" type="text" required="required" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="matkul" class="col-5 col-form-label font-weight-bold text-right">Mata Kuliah</label>
                 <div class="col-7">
-                    <select id="matkul" class="custom-select" required="required">
+                    <select name="matkul" class="custom-select" required="required">
                         <option>Dasar Dasar Pemrograman</option>
                         <option>Basis Data I</option>
                         <option>Pemrograman Web 1</option>
@@ -48,24 +48,24 @@
             <div class="form-group row">
                 <label for="nilai_uts" class="col-5 col-form-label font-weight-bold text-right">Nilai UTS</label>
                 <div class="col-7">
-                    <input id="nilai_uts" placeholder="Nilai UTS" type="number" class="form-control" required="required" min="0" max="100">
+                    <input name="nilai_uts" placeholder="Nilai UTS" type="number" class="form-control" required="required" min="0" max="100">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="nilai_uas" class="col-5 col-form-label font-weight-bold text-right">Nilai UAS</label>
                 <div class="col-7">
-                    <input id="nilai_uas" placeholder="Nilai UAS" type="number" class="form-control" required="required" min="0" max="100">
+                    <input name="nilai_uas" placeholder="Nilai UAS" type="number" class="form-control" required="required" min="0" max="100">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="nilai_tugas" class="col-5 col-form-label font-weight-bold text-right">Nilai Tugas/Praktikum</label>
                 <div class="col-7">
-                    <input id="nilai_tugas" placeholder="Nilai Tugas" type="number" class="form-control" required="required" min="0" max="100">
+                    <input name="nilai_tugas" placeholder="Nilai Tugas" type="number" class="form-control" required="required" min="0" max="100">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="offset-5 col-7">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" name="proses" class="btn btn-primary">Simpan</button>
                 </div>
             </div>
         </form>

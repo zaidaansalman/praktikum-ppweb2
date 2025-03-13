@@ -1,10 +1,10 @@
 <?php
-$proses = $_POST['proses'];
-$nama_siswa = $_POST['nama'];
-$mata_kuliah = $_POST['matkul'];
-$nilai_uts = $_POST['nilai_uts'];
-$nilai_uas = $_POST['nilai_uas'];
-$nilai_tugas = $_POST['nilai_tugas'];
+    $proses = $_POST['proses'];
+    $nama_siswa = $_POST['nama'];
+    $mata_kuliah = $_POST['matkul'];
+    $nilai_uts = $_POST['nilai_uts'];
+    $nilai_uas = $_POST['nilai_uas'];
+    $nilai_tugas = $_POST['nilai_tugas'];
 
 /*
 - Mendefinisikan Variabel
@@ -13,7 +13,7 @@ $nilai_tugas = $_POST['nilai_tugas'];
 - Grade
 - Predikat
 */
-$nilai_akhir = $_POST('$nilai_uts') * 0.3 + $_POST('$nilai_uas') * 0.35 + $_POST('$nilai_tugas') * 0.35;
+    $nilai_akhir = ($nilai_uts * 0.3) + ($nilai_uas * 0.35) + ($nilai_tugas * 0.35);
 
 /*
 - MENENTUKAN LULUS ATAU TIDAK MENGGUNAKAN IF ELSE
@@ -54,13 +54,13 @@ if ($nilai_akhir >= 0 && $nilai_akhir <= 35){
 elseif ($nilai_akhir >= 36 && $nilai_akhir <= 55){
     $grade = 'D';
 }
-elseif ($nilai_akhir > 55 && $nilai_akhir <= 69){
+elseif ($nilai_akhir >= 55 && $nilai_akhir <= 69){
     $grade = 'C';
 }
-elseif ($nilai_akhir > 70 && $nilai_akhir <= 84){
+elseif ($nilai_akhir >= 70 && $nilai_akhir <= 84){
     $grade = 'B';
 }
-elseif ($nilai_akhir > 85 && $nilai_akhir <= 100){
+elseif ($nilai_akhir >= 85 && $nilai_akhir <= 100){
     $grade = 'A';
 }
 elseif ($nilai_akhir < 0 && $nilai_akhir > 100){
@@ -100,10 +100,13 @@ switch ($grade){
         $predikat = 'Cukup';
         break;
     case 'B':
-        $predikat = 'Memuaskan';
+        $predikat = 'Bagus';
         break;
     case 'A':
-        $predikat = 'Sangat Memuaskan';
+        $predikat = 'Sangat Bagus';
+        break;
+    case 'I':
+        $predikat = 'Tidak Ada';
         break;
     default:
         $predikat = 'Tidak Ada';
@@ -111,12 +114,16 @@ switch ($grade){
 }
 
 // MENCETAK HASIL
-if (!empty($proses)) {
-   
+if (isset($proses)) {
     echo '<br/>Nama : ' . $nama_siswa;
     echo '<br/>Mata Kuliah : ' . $mata_kuliah;
     echo '<br/>Nilai UTS : ' . $nilai_uts;
     echo '<br/>Nilai UAS : ' . $nilai_uas;
     echo '<br/>Nilai Tugas Praktikum : ' . $nilai_tugas;
+    echo '<br/>Nilai Akhir : ' . number_format($nilai_akhir,2);
+    echo '<br/>Status : ' . $status;
+    echo '<br/>Grade : ' . $grade;
+    echo '<br/>Predikat : ' . $predikat;
+    
     // Mencetak Nilai Akhir, Status, Grade, dan Predikat
 }
